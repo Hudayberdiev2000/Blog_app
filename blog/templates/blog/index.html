@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}My blog{% endblock  %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/post.css' %}"/>
+<link rel="stylesheet" href="{% static 'blog/index.css' %}"/>
+{% endblock  %}
+
+{% block content %}
+<section id="welcome">
+    <header>
+    <img src="{% static 'blog/images/IMG_20230406_105542.jpg' %}" alt="Zaman - is the author of the Blog" />
+    <h2>Zaman's Blog</h2>
+    </header>
+    <p>Hi, I am Zaman and I love to blog about tech and the world!</p>
+</section> 
+
+<section id="latest-posts">
+
+<h2>My latest thought</h2>
+
+<ul>
+    {% for post in posts %}
+    {% include "blog/includes/post.html" %}
+    {% endfor %}
+</ul>
+
+</section>
+
+<section id="about">
+    <h2>What i do</h2>
+    <p>I love programming . djfdgffg hghghg. </p>
+    <p>My goal  is to keep groving dfgdhg fdgfdg.fdgfd gfdg fdg d.</p>
+</section>
+
+{% endblock  %}
+
